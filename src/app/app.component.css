@@ -1,23 +1,56 @@
+.container-fluid {
+  border: 2px solid black;
+}
 .r1 {
-  background-color: red;
+  background-color: #ea0a0a;
   height: 130px;
+  border-bottom: 2px solid black;
+}
+.HeaderName {
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold";
+  text-align: center;
+  margin-top: 25px;
+  color: whitesmoke;
+}
+.plus {
+  color: green;
+  font-size: 2em;
+  line-height: 0.65;
+  position: absolute;
+  margin: -2px 0px 0px 12px;
+}
+.HeaderName p {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
 }
 .r2 {
-  background-color: blue;
+  background-color: #c3d7ed;
+  border-bottom: 2px solid black;
   height: 900px;
 }
 .r3 {
-  background-color: green;
+  background-color: #ea0a0a;
   height: 50px;
 }
 .c1 {
-  background-color: yellow;
   height: unset;
+  border-right: 2px solid black;
 }
 .c2 {
-  background-color: gray;
   height: unset;
 }
 #formpos {
-  margin-top: 100px;
+  margin-top: 30px;
+}
+
+.Preview {
+  margin: 40px 0px 0px 40px;
+  height: 100px;
+  width: 200px;
+}
+.Print {
+  margin: 40px 0px 0px 40px;
+  height: 100px;
+  width: 200px;
 }

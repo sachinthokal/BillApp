@@ -10,48 +10,49 @@
   </div>
   <div class="row r2">
     <div class="col-lg-6 col-md-6 col-sm-6 c1">
-      <form id="formpos">
+      <form [formGroup]="FormData" id="formpos">
         <div class="mb-3">
-          <label for="Item" class="form-label">Item Name :</label>
-          <input type="text" class="form-control" id="Item" aria-describedby="ItemName">
+          <label for="item" class="form-label">Item Name :</label>
+          <input type="text" class="form-control" formControlName="item">
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Qty :</label>
-          <input type="text" class="form-control" id="exampleInputPassword1">
+          <label for="qty" class="form-label">Qty :</label>
+          <input type="text" class="form-control" formControlName="qty">
         </div>
         <div class="mb-3">
-          <label for="Rate" class="form-label">Rate (if Manual) :</label>
-          <input type="text" class="form-control" id="Rate" aria-describedby="Rate">
+          <label for="rate" class="form-label">Rate (if Manual) :</label>
+          <input type="text" class="form-control" formControlName="rate">
         </div>
         <div class="mb-3">
-          <label for="Discount" class="form-label">Discount :</label>
-          <input type="text" class="form-control" id="Discount" aria-describedby="Discount">
+          <label for="discount" class="form-label">Discount :</label>
+          <input type="text" class="form-control" formControlName="discount">
         </div>
-        <label for="Payment Mode" class="form-label mb-3">Payment Mode :</label>
+        <label for="Mode" class="form-label mb-3">Payment Mode :</label>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-          <label class="form-check-label" for="flexRadioDefault1">
+          <input class="form-check-input" type="radio" id="Online" formControlName="mode" value="Online">
+          <label class="form-check-label" for="Online">
             Online
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-          <label class="form-check-label" for="flexRadioDefault2">
+          <input class="form-check-input" type="radio" id="Cash" formControlName="mode" value="Cash" checked>
+          <label class="form-check-label" for="Cash">
             Cash
           </label>
         </div>
 
         <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6 "><button type="submit"
-              class="btn btn-primary Preview">Preview</button>
+          <div class="col-lg-6 col-md-6 col-sm-6 "><button class="btn btn-primary Preview" (click)="Add()">Add</button>
+
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-6 "><button type="submit" class="btn btn-primary Print">Print</button>
+          <div class="col-lg-6 col-md-6 col-sm-6 "><button class="btn btn-primary Print"
+              (click)="Preview()">Preview</button>
           </div>
         </div>
       </form>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 c2">
-      <table class="table table-hover">
+    <div class="col-lg-6 col-md-6 col-sm-6 c2" style="height: 898px; overflow: auto">
+      <table class="table table-responsive{-sm|-md|-lg|-xl|-xxl} table-hover">
         <thead>
           <tr>
             <th scope="col">Sr</th>
@@ -64,14 +65,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th>1</th>
-            <td>Prod 1</td>
-            <td>1</td>
-            <td>80.00</td>
-            <td>80.00</td>
-            <td><a href="#"><img src="../assets/pen.svg" /></a></td>
-            <td><a href="#"><img src="../assets/trash.svg" /></a></td>
+          <tr *ngFor="let data of Datalist ; let i = index">
+            <th>{{i+1}}</th>
+            <td>{{data.item}}</td>
+            <td>{{data.qty}}</td>
+            <td>{{data.rate}}</td>
+            <td>{{data.discount}}</td>
+            <td><a (click)="edit()"><img src="../assets/pen.svg" /></a></td>
+            <td><a (click)="delete(data)"><img src="../assets/trash.svg" /></a></td>
           </tr>
         </tbody>
       </table>

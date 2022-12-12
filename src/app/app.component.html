@@ -43,10 +43,44 @@
 
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-6 "><button class="btn btn-primary Preview" (click)="Add()">Add</button>
-
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-6 "><button class="btn btn-primary Print"
-              (click)="Preview()">Preview</button>
+
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <button type="button" class="btn btn-primary Print" (click)="onPreview()">Preview</button>
+            <div class="card" id="print-index-invoice" style="width: 1000px ; margin-left: -130px;" [hidden]="key">
+              <div class="printoutname HeaderName">
+                <h1>New Santosh Medical <label class="printoutname"> + </label></h1>
+                <p>
+                  Kharadi , Pune 411014.
+                </p>
+              </div>
+              <div style="height: 490px; overflow: auto">
+                <table class="table table-responsive{-sm|-md|-lg|-xl|-xxl} table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Sr</th>
+                      <th scope="col">Item</th>
+                      <th scope="col">Qty</th>
+                      <th scope="col">Rate</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let data of Datalist ; let i = index">
+                      <th>{{i+1}}</th>
+                      <td>{{data.item}}</td>
+                      <td>{{data.qty}}</td>
+                      <td>{{data.rate}}</td>
+                      <td>{{data.discount}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-success printout1" (click)="print()">Print</button>
+                <button type="button" class="btn btn-danger printout2" (click)="Close()">Close</button>
+              </div>
+            </div>
           </div>
         </div>
       </form>
@@ -59,7 +93,6 @@
             <th scope="col">Item</th>
             <th scope="col">Qty</th>
             <th scope="col">Rate</th>
-            <th scope="col">Amount</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -70,7 +103,6 @@
             <td>{{data.item}}</td>
             <td>{{data.qty}}</td>
             <td>{{data.rate}}</td>
-            <td>{{data.discount}}</td>
             <td><a (click)="edit()"><img src="../assets/pen.svg" /></a></td>
             <td><a (click)="delete(data)"><img src="../assets/trash.svg" /></a></td>
           </tr>

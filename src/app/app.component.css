@@ -58,3 +58,20 @@
   height: 100px;
   width: 200px;
 }
+.printout1 {
+  margin-left: 375px;
+  height: 50px;
+  width: 100px;
+}
+.printout2 {
+  margin-left: 10px;
+  height: 50px;
+  width: 100px;
+}
+.printoutname {
+  color: black;
+}
+.card {
+  border: 1px solid black;
+  margin: -730px;
+}

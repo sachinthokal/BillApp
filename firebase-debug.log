@@ -1,0 +1,83 @@
+[debug] [2022-12-01T15:06:29.273Z] ----------------------------------------------------------------------
+[debug] [2022-12-01T15:06:29.275Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Sachin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-01T15:06:29.275Z] CLI Version:   11.16.1
+[debug] [2022-12-01T15:06:29.275Z] Platform:      win32
+[debug] [2022-12-01T15:06:29.275Z] Node Version:  v16.13.1
+[debug] [2022-12-01T15:06:29.277Z] Time:          Thu Dec 01 2022 20:36:29 GMT+0530 (India Standard Time)
+[debug] [2022-12-01T15:06:29.277Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-01T15:06:29.351Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-01T15:06:29.351Z] > authorizing via signed-in user (sachinthokal1799@gmail.com)
+[debug] [2022-12-01T15:06:29.351Z] [iam] checking project billingapp-3998b for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-01T15:06:29.354Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/billingapp-3998b:testIamPermissions [none]
+[debug] [2022-12-01T15:06:29.354Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/billingapp-3998b:testIamPermissions x-goog-quota-user=projects/billingapp-3998b
+[debug] [2022-12-01T15:06:29.354Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/billingapp-3998b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-01T15:06:31.334Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/billingapp-3998b:testIamPermissions 200
+[debug] [2022-12-01T15:06:31.334Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/billingapp-3998b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-01T15:06:31.336Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/billingapp-3998b [none]
+[debug] [2022-12-01T15:06:31.928Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/billingapp-3998b 200
+[debug] [2022-12-01T15:06:31.928Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/billingapp-3998b {"projectId":"billingapp-3998b","projectNumber":"164753884862","displayName":"BillingApp","name":"projects/billingapp-3998b","resources":{"hostingSite":"billingapp-3998b"},"state":"ACTIVE","etag":"1_2433c928-0978-4b6b-ba2f-6cf5121b0f80"}
+[info] 
+[info] === Deploying to 'billingapp-3998b'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-12-01T15:06:31.947Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/billingapp-3998b/versions [none]
+[debug] [2022-12-01T15:06:31.948Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/billingapp-3998b/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-12-01T15:06:34.089Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/billingapp-3998b/versions 200
+[debug] [2022-12-01T15:06:34.090Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/billingapp-3998b/versions {"name":"projects/164753884862/sites/billingapp-3998b/versions/17246361fbb58b9e","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[billingapp-3998b]: beginning deploy... 
+[info] i  hosting[billingapp-3998b]: found 2 files in Y 
+[debug] [2022-12-01T15:06:34.103Z] [hosting] uploading with 200 concurrency
+[debug] [2022-12-01T15:06:34.105Z] [hosting] hash cache [WQ] not populated
+[debug] [2022-12-01T15:06:34.123Z] [hosting] hash cache [WQ] stored for 2 files
+[debug] [2022-12-01T15:06:34.123Z] [hosting][hash queue][FINAL] {"max":9,"min":7,"avg":8,"active":0,"complete":2,"success":2,"errored":0,"retried":0,"total":2,"elapsed":15}
+[debug] [2022-12-01T15:06:34.124Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/164753884862/sites/billingapp-3998b/versions/17246361fbb58b9e:populateFiles [none]
+[debug] [2022-12-01T15:06:34.124Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/164753884862/sites/billingapp-3998b/versions/17246361fbb58b9e:populateFiles {"files":{"/404.html":"daa499dd96d8229e73235345702ba32f0793f0c8e5c0d30e40e37a5872be57aa","/index.html":"c03ca608c87aaec0bab0aedd0e3f606cfc7efc11056378394c3d7170ded2ff00"}}
+[debug] [2022-12-01T15:06:35.531Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/164753884862/sites/billingapp-3998b/versions/17246361fbb58b9e:populateFiles 200
+[debug] [2022-12-01T15:06:35.531Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/164753884862/sites/billingapp-3998b/versions/17246361fbb58b9e:populateFiles {"uploadRequiredHashes":["daa499dd96d8229e73235345702ba32f0793f0c8e5c0d30e40e37a5872be57aa","c03ca608c87aaec0bab0aedd0e3f606cfc7efc11056378394c3d7170ded2ff00"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/billingapp-3998b/versions/17246361fbb58b9e/files"}
+[debug] [2022-12-01T15:06:35.535Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/billingapp-3998b/versions/17246361fbb58b9e/files/daa499dd96d8229e73235345702ba32f0793f0c8e5c0d30e40e37a5872be57aa [none]
+[debug] [2022-12-01T15:06:35.535Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/billingapp-3998b/versions/17246361fbb58b9e/files/daa499dd96d8229e73235345702ba32f0793f0c8e5c0d30e40e37a5872be57aa [stream]
+[debug] [2022-12-01T15:06:35.539Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/billingapp-3998b/versions/17246361fbb58b9e/files/c03ca608c87aaec0bab0aedd0e3f606cfc7efc11056378394c3d7170ded2ff00 [none]
+[debug] [2022-12-01T15:06:35.540Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/billingapp-3998b/versions/17246361fbb58b9e/files/c03ca608c87aaec0bab0aedd0e3f606cfc7efc11056378394c3d7170ded2ff00 [stream]
+[debug] [2022-12-01T15:06:35.542Z] [hosting][populate queue][FINAL] {"max":1416,"min":1416,"avg":1416,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1423}
+[debug] [2022-12-01T15:06:35.543Z] [hosting] uploads queued: 2
+[debug] [2022-12-01T15:06:38.682Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/billingapp-3998b/versions/17246361fbb58b9e/files/daa499dd96d8229e73235345702ba32f0793f0c8e5c0d30e40e37a5872be57aa 200
+[debug] [2022-12-01T15:06:38.682Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/billingapp-3998b/versions/17246361fbb58b9e/files/daa499dd96d8229e73235345702ba32f0793f0c8e5c0d30e40e37a5872be57aa [stream]
+[debug] [2022-12-01T15:06:39.708Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/billingapp-3998b/versions/17246361fbb58b9e/files/c03ca608c87aaec0bab0aedd0e3f606cfc7efc11056378394c3d7170ded2ff00 200
+[debug] [2022-12-01T15:06:39.708Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/billingapp-3998b/versions/17246361fbb58b9e/files/c03ca608c87aaec0bab0aedd0e3f606cfc7efc11056378394c3d7170ded2ff00 [stream]
+[debug] [2022-12-01T15:06:39.709Z] [hosting][upload queue][FINAL] {"max":4175,"min":3150,"avg":3662.5,"active":0,"complete":2,"success":2,"errored":0,"retried":0,"total":2,"elapsed":4177}
+[info] +  hosting[billingapp-3998b]: file upload complete 
+[debug] [2022-12-01T15:06:39.711Z] [hosting] deploy completed after 5617ms
+[debug] [2022-12-01T15:06:39.715Z] [
+  {
+    "config": {
+      "public": "Y",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "site": "billingapp-3998b"
+    },
+    "version": "projects/164753884862/sites/billingapp-3998b/versions/17246361fbb58b9e"
+  }
+]
+[info] i  hosting[billingapp-3998b]: finalizing version... 
+[debug] [2022-12-01T15:06:39.720Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/billingapp-3998b/versions/17246361fbb58b9e updateMask=status%2Cconfig
+[debug] [2022-12-01T15:06:39.720Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/billingapp-3998b/versions/17246361fbb58b9e {"status":"FINALIZED","config":{}}
+[debug] [2022-12-01T15:06:40.828Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/billingapp-3998b/versions/17246361fbb58b9e 200
+[debug] [2022-12-01T15:06:40.829Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/billingapp-3998b/versions/17246361fbb58b9e {"name":"projects/164753884862/sites/billingapp-3998b/versions/17246361fbb58b9e","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-01T15:06:34.109841Z","createUser":{"email":"sachinthokal1799@gmail.com"},"finalizeTime":"2022-12-01T15:06:41.513862Z","finalizeUser":{"email":"sachinthokal1799@gmail.com"}}
+[debug] [2022-12-01T15:06:40.829Z] [hosting] finalized version for billingapp-3998b:[object Object]
+[info] +  hosting[billingapp-3998b]: version finalized 
+[info] i  hosting[billingapp-3998b]: releasing new version... 
+[debug] [2022-12-01T15:06:40.834Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/billingapp-3998b/channels/live/releases versionName=projects%2F164753884862%2Fsites%2Fbillingapp-3998b%2Fversions%2F17246361fbb58b9e
+[debug] [2022-12-01T15:06:40.835Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/billingapp-3998b/channels/live/releases {}
+[debug] [2022-12-01T15:06:42.047Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/billingapp-3998b/channels/live/releases 200
+[debug] [2022-12-01T15:06:42.047Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/billingapp-3998b/channels/live/releases {"name":"projects/164753884862/sites/billingapp-3998b/channels/live/releases/1669907202019139","version":{"name":"projects/164753884862/sites/billingapp-3998b/versions/17246361fbb58b9e","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-01T15:06:34.109841Z","createUser":{"email":"sachinthokal1799@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu1XjH58nT1meJM6nmKAu5yfvjZ_yz_e0HEL0Fw9"},"finalizeTime":"2022-12-01T15:06:41.513862Z","finalizeUser":{"email":"sachinthokal1799@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu1XjH58nT1meJM6nmKAu5yfvjZ_yz_e0HEL0Fw9"}},"type":"DEPLOY","releaseTime":"2022-12-01T15:06:42.019139864Z","releaseUser":{"email":"sachinthokal1799@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu1XjH58nT1meJM6nmKAu5yfvjZ_yz_e0HEL0Fw9"}}
+[debug] [2022-12-01T15:06:42.047Z] [hosting] release: {"name":"projects/164753884862/sites/billingapp-3998b/channels/live/releases/1669907202019139","version":{"name":"projects/164753884862/sites/billingapp-3998b/versions/17246361fbb58b9e","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-01T15:06:34.109841Z","createUser":{"email":"sachinthokal1799@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu1XjH58nT1meJM6nmKAu5yfvjZ_yz_e0HEL0Fw9"},"finalizeTime":"2022-12-01T15:06:41.513862Z","finalizeUser":{"email":"sachinthokal1799@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu1XjH58nT1meJM6nmKAu5yfvjZ_yz_e0HEL0Fw9"}},"type":"DEPLOY","releaseTime":"2022-12-01T15:06:42.019139864Z","releaseUser":{"email":"sachinthokal1799@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu1XjH58nT1meJM6nmKAu5yfvjZ_yz_e0HEL0Fw9"}}
+[info] +  hosting[billingapp-3998b]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/billingapp-3998b/overview
+[info] Hosting URL: https://billingapp-3998b.web.app
